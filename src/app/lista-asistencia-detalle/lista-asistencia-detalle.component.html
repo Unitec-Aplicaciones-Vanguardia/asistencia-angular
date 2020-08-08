@@ -1,0 +1,33 @@
+<div class="card" *ngIf="alumnoSeleccionado">
+    <div class="card-body">
+        <h3 class="card-title">{{ alumnoSeleccionado.nombre }}</h3>
+        <div class="card-text">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <div class="form-group">
+                        Número de cuenta:
+                        <input type="text" [style.text-decoration]="lineThrough"  class="form-control" disabled [value]="alumnoSeleccionado.numeroCuenta">
+                    </div>
+                    <div class="form-group">
+                        Inasistencias:
+                        <input type="text" class="form-control" disabled [value]="alumnoSeleccionado.inasistencias">
+                    </div>
+                    <div class="form-group">
+                        Correo Electronico:
+                        <input type="text" class="form-control" disabled [value]="alumnoSeleccionado.correo">
+                    </div>
+                    <div class="form-group">
+                        Edad:
+                        <input type="text" class="form-control" disabled [value]="alumnoSeleccionado.edad">
+                    </div>
+                    <div class="form-group">
+                        Genero:
+                        <input type="text" class="form-control" disabled [value]="alumnoSeleccionado.genero">
+                    </div>
+                </table>
+                <button class="btn btn-block btn-info" (click)="incrementarInasistencia()">Marcar inasistencia</button>
+                <button class="btn btn-block btn-danger" (click)="delete()">Eliminar alumno</button>
+            </div>
+        </div>
+    </div>
+</div>
